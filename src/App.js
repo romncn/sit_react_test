@@ -1,26 +1,54 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class ProductList extends React.Component {
+  state = {
+    //key: value
+    products: [
+      {
+        name: 'Oreo',
+        description: 'Biscuit. 112g',
+        price: 270.00
+      },
+      {
+        name: '3D Mask ผู้ใหญ่',
+        description: '3D Mask ผู้ใหญ่',
+        price: 129.00
+      },
+      {
+        name: 'กะเพรา',
+        description: 'กะเพรา 4 ต้น',
+        price: 10.50
+      },
+      {
+        name: 'ฺฺBar-B-Q-Plaza E-Vouncer',
+        description: 'e-vouncher 100',
+        price: 85.00
+      }
+
+    ],
+    // user: {object}
+    user: {
+      name: 'Rom'
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>Product List {this.state.user.name}</h1>
+        <div>
+          {this.state.products.map(
+            (product) => (
+              <div>
+                <br/>{product.name},
+                <br/>{product.description},
+                <br/>{product.price}
+                </div>
+            )
+          )}
+        </div>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default ProductList
