@@ -18,6 +18,7 @@ function Title(props) { // dump component
   )
 }
 // 'props-type' library ไปลองดู
+
 const ProductCard = (props) => {
 
   return (
@@ -98,7 +99,9 @@ class ProductList extends React.Component {
           {this.state.products.map(
             (product) => (
               <ProductCard item={product} />
-
+              )
+              )}
+{/* 
               // <ProductCard product={product} />
 
               // <div>
@@ -106,8 +109,7 @@ class ProductList extends React.Component {
               //   <br/>{product.description},
               //   <br/>{product.price}
               //   </div>
-            )
-          )}
+           */}
         </div>
       </div>
     )
